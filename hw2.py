@@ -4,15 +4,15 @@ from pandas import Series, DataFrame
 
 dataset = pd.read_csv("dataset.csv")
 
-print dataset.info()
+#print dataset.info()
 
 train_df = dataset.filter(regex='TIME_PERIOD|MONTH|DAY|YEAR|CATNO|ZIP|EVENT')
 train_np = train_df.as_matrix()
 
 # print train_df
 
-y = train_np[0:1000, 0]
-X = train_np[0:1000, 1:]
+y = train_np[:, 0]
+X = train_np[:, 1:]
 
 print y
 print X
